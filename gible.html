@@ -6,6 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <title>Gible Details</title>
+    <style>
+        /* Add this style for the initial state of the box */
+        .additional-info-box {
+            transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+        }
+
+        .bounce {
+            animation: bounce 2s ease infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-20px);
+            }
+            60% {
+                transform: translateY(-10px);
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -20,11 +42,12 @@
             <div class="left-column">
                 <h2>Gible</h2>
                 <div class="image-container">
-                    <img src="images/Gible.png" alt="Gible Image">
+                    <img src="anim/gible2.0.gif" alt="Gible Image">
                 </div>
                 <p>Power Type: Dragon, Ground</p>
                 <p>Generation: IV</p>
-                <div class="additional-info-box">
+                <!-- Add the id to target in JavaScript -->
+                <div class="additional-info-box bounce" id="additionalInfoBox">
                     <p>Additional Information:</p>
                     <p>Gible is a small, bipedal dragon-like Pokémon that is primarily grayish-blue. 
                         Gible has tremendously strong jaws that it uses to bite enemies and prey alike, 
@@ -41,22 +64,22 @@
                 <h3>Evolution</h3>
                 <div class="evolution-container">
                     <div class="evolution-images">
-                        <div class="evolution-image-container">
-                            <img src="images/Gible.png" alt="Gible">
+                        <div class="evolution-image-container" id="zoomImageContainer">
+                            <img src="images/Gible.png" alt="Gible" id="zoomImage">
                         </div>
                         <p>Gible</p>
                         <span style='font-size:30px;'>&dArr;</span>
                     </div>
                     <div class="evolution-images">
-                        <div class="evolution-image-container">
-                            <img src="images/Gabite.png" alt="Gabite">
+                        <div class="evolution-image-container" id="zoomImageContainer">
+                            <img src="images/Gabite.png" alt="Gabite" id="zoomImage">
                         </div>
                         <p>Gabite</p>
                         <span style='font-size:30px;'>&dArr;</span>
                     </div>
                     <div class="evolution-images">
-                        <div class="evolution-image-container">
-                            <img src="images/Garchomp.png" alt="Garchomp">
+                        <div class="evolution-image-container" id="zoomImageContainer">
+                            <img src="images/Garchomp.png" alt="Garchomp" id="zoomImage">
                         </div>
                         <p>Garchomp</p>
                     </div>
@@ -64,8 +87,42 @@
             </div>
         </main>
 
-        <a href="index.html" class="back-button">Back to All Pokemon</a>
+        <a href="explorepokemon.html" class="back-button">Back to All Pokemon</a>
     </div>
+    <!-- JavaScript for the hover effect and bounce animation on the Additional Information box -->
+    <script>
+        const additionalInfoBox = document.getElementById('additionalInfoBox');
+
+        // Remove the bounce class on hover
+        additionalInfoBox.addEventListener('mouseenter', () => {
+            additionalInfoBox.classList.remove('bounce');
+            additionalInfoBox.style.backgroundColor = '#14213D'; // Change to the desired background color
+            additionalInfoBox.style.boxShadow = '0 0 10px rgba(255, 255, 255, 0.8)'; // Add a subtle box shadow
+        });
+
+        // Add the bounce class again when the mouse leaves
+        additionalInfoBox.addEventListener('mouseleave', () => {
+            additionalInfoBox.classList.add('bounce');
+            additionalInfoBox.style.backgroundColor = ''; // Revert to the default background color
+            additionalInfoBox.style.boxShadow = ''; // Remove the box shadow
+        });
+    </script>
+
+    <!-- JavaScript for image zoom effect -->
+    <script>
+        const evolutionImageContainers = document.querySelectorAll('.evolution-image-container');
+    
+        evolutionImageContainers.forEach((container) => {
+            container.addEventListener('mouseenter', () => {
+                container.style.transform = 'scale(1.2)';
+                container.style.transition = 'transform 0.3s ease';
+            });
+    
+            container.addEventListener('mouseleave', () => {
+                container.style.transform = 'scale(1)';
+            });
+        });
+    </script>
 </body>
 
 </html>

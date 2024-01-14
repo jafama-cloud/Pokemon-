@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Explore Pokemon</title>
+    
+    <script>
+        // JavaScript to handle preventing going back to index.html after redirecting to explorepokemon.html
+        if (window.history.replaceState) {
+            window.history.replaceState(null, null, window.location.href);
+        }
+    </script>
+    
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <img class="logo-img" src="images/pokemonlogo.png" alt="Pokemon Logo">
+            <hr><hr>
+            <p class="explore-text">Explore Pokemon</p>
+        </header>
+
+       <main class="pokemon-grid">
+            <!-- Pokemon 1 -->
+            <a href="pikachu.html" class="pokemon-item" data-original-src="images/pikachu.png" data-gif-src="anim/pikachu.gif">
+                <div>
+                    <p class="pokemon-number">1</p>
+                    <img src="images/pikachu.png" alt="Pikachu">
+                    <p class="pokemon-name">Pikachu</p>
+                </div>
+            </a>
+
+            <!-- Pokemon 2 -->
+            <a href="charmeleon.html" class="pokemon-item" data-original-src="images/Charmeleon.png" data-gif-src="anim/charmeleon.gif">
+                <div>
+                    <p class="pokemon-number">2</p>
+                    <img src="images/Charmeleon.png" alt="Charmeleon">
+                    <p class="pokemon-name">Charmeleon</p>
+                </div>
+            </a>
+
+            <!-- Pokemon 3 -->
+             <a href="hoppip.html" class="pokemon-item" data-original-src="images/Hoppip.png" data-gif-src="anim/hoppip.gif">
+                <div>
+                    <p class="pokemon-number">3</p>
+                    <img src="images/Hoppip.png" alt="Hoppip">
+                    <p class="pokemon-name">Hoppip</p>
+                </div>
+            </a>
+
+            <!-- Pokemon 4 -->
+            <a href="mudkip.html" class="pokemon-item" data-original-src="images/Mudkip.png" data-gif-src="anim/mudkip.gif">
+                <div>
+                    <p class="pokemon-number">4</p>
+                    <img src="images/Mudkip.png" alt="Mudkip">
+                    <p class="pokemon-name">Mudkip</p>
+                </div>
+            </a>
+
+            <!-- Pokemon 5 -->
+            <a href="gible.html" class="pokemon-item" data-original-src="images/Gible.png" data-gif-src="anim/gible.gif">
+                <div>
+                    <p class="pokemon-number">5</p>
+                    <img src="images/Gible.png" alt="Mudkip">
+                    <p class="pokemon-name">Gible</p>
+                </div>
+            </a>
+
+            <!-- Pokemon 6 -->
+            <a href="roggenrola.html" class="pokemon-item" data-original-src="images/Roggenrola.png" data-gif-src="anim/roggenrola.gif">
+                <div>
+                    <p class="pokemon-number">6</p>
+                    <img src="images/Roggenrola.png" alt="Roggenrola">
+                    <p class="pokemon-name">Roggenrola</p>
+                </div>
+            </a>
+
+            <!-- Pokemon 7 -->
+            <a href="scatterbug.html" class="pokemon-item" data-original-src="images/Scatterbug.png" data-gif-src="anim/scatterbug.gif">
+                <div>
+                    <p class="pokemon-number">7</p>
+                    <img src="images/Scatterbug.png" alt="Scatterbug">
+                    <p class="pokemon-name">Scatterbug</p>
+                </div>
+            </a>
+
+            <!-- Pokemon 8 -->
+            <a href="litten.html" class="pokemon-item" data-original-src="images/Litten.png" data-gif-src="anim/litten.gif">
+                <div>
+                    <p class="pokemon-number">8</p>
+                    <img src="images/Litten.png" alt="Litten">
+                    <p class="pokemon-name">Litten</p>
+                </div>
+            </a>
+
+            <!-- Pokemon 9 -->
+            <a href="grookey.html" class="pokemon-item" data-original-src="images/Grookey.png" data-gif-src="anim/grookey.gif">
+                <div>
+                    <p class="pokemon-number">9</p>
+                    <img src="images/Grookey.png" alt="Grookey">
+                    <p class="pokemon-name">Grookey</p>
+                </div>
+            </a>
+
+            <!-- Pokemon 10 -->
+            <a href="charcadet.html" class="pokemon-item" data-original-src="images/Charcadet.png" data-gif-src="anim/charcadet.gif">
+                <div>
+                    <p class="pokemon-number">10</p>
+                    <img src="images/Charcadet.png" alt="Charcadet">
+                    <p class="pokemon-name">Charcadet</p>
+                </div>
+            </a>
+        </main>
+    </div>
+
+    <!-- JavaScript to change the img source from a PNG to a GIF when the pokemon-item is hovered. -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const pokemonItems = document.querySelectorAll('.pokemon-item');
+
+            pokemonItems.forEach(item => {
+                const originalImgSrc = item.dataset.originalSrc;
+                const gifImgSrc = item.dataset.gifSrc;
+                const originalZIndex = item.style.zIndex;
+
+                item.addEventListener('mouseenter', function () {
+                    this.style.transform = 'scale(1.1)';
+                    this.style.backgroundColor = 'black';
+                    this.style.zIndex = '1';
+                    this.querySelector('img').src = gifImgSrc;
+                });
+
+                item.addEventListener('mouseleave', function () {
+                    this.style.transform = 'scale(1)';
+                    this.style.backgroundColor = '#14213D';
+                    this.style.zIndex = originalZIndex;
+                    this.querySelector('img').src = originalImgSrc;
+                });
+            });
+        });
+    </script>
+
+    <!-- JavaScript to add a hover effect to each pokemon-item in the Explore Pokemon page. When hovered, the item will 
+   enlarge and change its background color to black. -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const pokemonItems = document.querySelectorAll('.pokemon-item');
+
+            pokemonItems.forEach(item => {
+                item.addEventListener('mouseenter', function () {
+                    this.style.transform = 'scale(1.1)';
+                    this.style.backgroundColor = 'black';
+                    this.style.zIndex = '1';
+                });
+
+                item.addEventListener('mouseleave', function () {
+                    this.style.transform = 'scale(1)';
+                    this.style.backgroundColor = '#14213D';
+                    this.style.zIndex = '0';
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+Modifications:
+
+1. Typing animation using JavaScript in the intro page: "Welcome to Explore Pokemon".
+
+2. JavaScript to handle Loading Effect and redirection after clicking the Explore Pokemon button.
+
+3. JavaScript to handle preventing going back to index.html (intro page) after redirecting to explorepokemon.html 
+   or the Explore Pokemon page.
+
+4. JavaScript to add a hover effect to each pokemon-item in the Explore Pokemon page. When hovered, the item will 
+   enlarge and change its background color to black. 
+
+5. JavaScript to change the img source from a PNG to a GIF when the pokemon-item is hovered in the Explore Pokemon page.
+   
+6. JavaScript for image zoom effect in the Evolution details for each Pokemon.
+
+7. JavaScript to add a bounce effect to the 'Additional Information' box and add a smooth transition to the background 
+    color and box-shadow of the "Additional Information" box on hover, creating a subtle and visually appealing effect.
+    

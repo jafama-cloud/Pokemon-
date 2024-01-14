@@ -9,7 +9,7 @@ body {
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
     padding: 20px;
 }
@@ -46,6 +46,8 @@ header {
     text-align: center;
     color: white;
     position: relative; /* Add relative positioning to the container */
+    /* Add styles for hover effect */
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
 
 .pokemon-item img {
@@ -64,7 +66,7 @@ header {
 .pokemon-item:hover::after {
     content: "Click to see details";
     display: block;
-    background-color: #14213D;
+    background-color: black;
     color: #ffc107;
     padding: 10px;
     border-radius: 5px;
@@ -94,8 +96,8 @@ main.pokemon-details {
 
 .left-column img {
     width: 100%;
-    max-width: 300px;
-    height: auto;
+    max-width: 400px;
+    height: 280px;
     display: block;
     margin: auto;
 }

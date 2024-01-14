@@ -5,110 +5,217 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <title>Explore Pokemon</title>
+    <title>Intro to Explore Pokemon</title>
+    <style>
+        /* Styling for the intro page */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: #2f4550;
+            background: -webkit-linear-gradient(0deg, #2f4550 0%, #000000 100%);
+            background: linear-gradient(0deg, #2f4550 0%, #000000 100%);
+            color: white;
+        }
+
+        .intro-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            animation: fadeIn 4s forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .intro-logo-img {
+            max-width: 60%;
+        }
+
+        .intro-video {
+            width: 100%;
+        }
+
+        #typingText {
+            font-size: 3em; 
+        }
+
+        .explore-button {
+            font-size: 1.5em;
+            display: block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: yellow;
+            color: black;
+            text-decoration: none;
+            border-radius: 5px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .explore-button:hover {
+            background-color: #ffc107;
+        }
+
+        /* Styling for the loading container */
+        .loading-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: #2f4550;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        .ball {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: white;
+            position: relative;
+            box-shadow: -20px 0 rgba(0, 0, 0, 0.1) inset;
+            animation: roll 1s ease-in-out infinite;
+            background: linear-gradient(
+                to bottom,
+                #e83e35 0%,
+                #e83e35 50.5%,
+                #ffffff 50.51%,
+                #ffffff 100%
+            );
+        }
+
+        .ball:after {
+            content: "";
+            position: absolute;
+            top: calc(100px - 3px);
+            left: 0;
+            width: 200px;
+            height: 6px;
+            background: #3f3f3f;
+        }
+
+        .ball:before {
+            content: "";
+            position: absolute;
+            top: 67px;
+            left: 67px;
+            width: 54px;
+            height: 54px;
+            border: solid 6px #3f3f3f;
+            border-radius: 50%;
+            background: white;
+            z-index: 1;
+            box-shadow: 0 0 15px -2px #c62828 inset;
+            animation: button 3s ease infinite;
+        }
+
+        @keyframes roll {
+            from {
+                transform: rotate(0);
+            }
+            90%,
+            to {
+                transform: rotate(720deg);
+            }
+        }
+
+        @keyframes button {
+            from,
+            50%,
+            to {
+                box-shadow: 0 0 15px -2px #c62828 inset;
+            }
+
+            25%,
+            75% {
+                box-shadow: 0 0 10px -2px #1300ea inset;
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <div class="container">
-        <header>
-            <img class="logo-img" src="images/pokemonlogo.png" alt="Pokemon Logo">
-            <hr><hr>
-            <p class="explore-text">Explore Pokemon</p>
-        </header>
-
-       <main class="pokemon-grid">
-            <!-- Pokemon 1 -->
-            <a href="pikachu.html" class="pokemon-item">
-                <div>
-                    <p class="pokemon-number">1</p>
-                    <img src="images/pikachu.png" alt="Pikachu">
-                    <p class="pokemon-name">Pikachu</p>
-                </div>
-            </a>
-
-            <!-- Pokemon 2 -->
-            <a href="charmeleon.html" class="pokemon-item">
-                <div>
-                    <p class="pokemon-number">2</p>
-                    <img src="images/Charmeleon.png" alt="Charmeleon">
-                    <p class="pokemon-name">Charmeleon</p>
-                </div>
-            </a>
-
-            <!-- Pokemon 3 -->
-             <a href="hoppip.html" class="pokemon-item">
-                <div>
-                    <p class="pokemon-number">3</p>
-                    <img src="images/Hoppip.png" alt="Hoppip">
-                    <p class="pokemon-name">Hoppip</p>
-                </div>
-            </a>
-
-            <!-- Pokemon 4 -->
-            <a href="mudkip.html" class="pokemon-item">
-                <div>
-                    <p class="pokemon-number">4</p>
-                    <img src="images/Mudkip.png" alt="Mudkip">
-                    <p class="pokemon-name">Mudkip</p>
-                </div>
-            </a>
-
-            <!-- Pokemon 5 -->
-            <a href="gible.html" class="pokemon-item">
-                <div>
-                    <p class="pokemon-number">5</p>
-                    <img src="images/Gible.png" alt="Mudkip">
-                    <p class="pokemon-name">Gible</p>
-                </div>
-            </a>
-
-            <!-- Pokemon 6 -->
-            <a href="roggenrola.html" class="pokemon-item">
-                <div>
-                    <p class="pokemon-number">6</p>
-                    <img src="images/Roggenrola.png" alt="Roggenrola">
-                    <p class="pokemon-name">Roggenrola</p>
-                </div>
-            </a>
-
-            <!-- Pokemon 7 -->
-            <a href="scatterbug.html" class="pokemon-item">
-                <div>
-                    <p class="pokemon-number">7</p>
-                    <img src="images/Scatterbug.png" alt="Scatterbug">
-                    <p class="pokemon-name">Scatterbug</p>
-                </div>
-            </a>
-
-            <!-- Pokemon 8 -->
-            <a href="litten.html" class="pokemon-item">
-                <div>
-                    <p class="pokemon-number">8</p>
-                    <img src="images/Litten.png" alt="Litten">
-                    <p class="pokemon-name">Litten</p>
-                </div>
-            </a>
-
-            <!-- Pokemon 9 -->
-            <a href="grookey.html" class="pokemon-item">
-                <div>
-                    <p class="pokemon-number">9</p>
-                    <img src="images/Grookey.png" alt="Grookey">
-                    <p class="pokemon-name">Grookey</p>
-                </div>
-            </a>
-
-            <!-- Pokemon 10 -->
-            <a href="charcadet.html" class="pokemon-item">
-                <div>
-                    <p class="pokemon-number">10</p>
-                    <img src="images/Charcadet.png" alt="Charcadet">
-                    <p class="pokemon-name">Charcadet</p>
-                </div>
-            </a>
-
-        </main>
+    <div class="intro-container">
+        <img class="intro-logo-img" src="images/pokemonlogo.png" alt="Pokemon Logo">
+        <hr><hr>
+        <h1 id="typingText"></h1>
+        <p>Embark on a journey to discover the fascinating world of Pokemon! Explore a diverse collection of Pokemon, each with its own unique characteristics and abilities.</p>
+        <p>Get ready to dive into the adventure and uncover the secrets of these extraordinary creatures. Are you ready to become a Pokemon Master?</p>
+        <video class="intro-video" autoplay muted loop>
+            <source src="anim/Pokeball animation.mp4" type="video/mp4" label="1080p">
+            Your browser does not support the video tag.
+        </video>
+        <a href="explorepokemon.html" class="explore-button" id="exploreBtn">Explore Now</a>
     </div>
-</body>
 
+    <script>
+        // JavaScript to handle redirection after clicking the Explore Pokemon button
+        document.getElementById("exploreBtn").addEventListener("click", function (event) {
+            event.preventDefault();
+
+            // Display the loading effect
+            showLoadingEffect();
+
+            // Simulate a delay of 3 seconds before redirecting to explorepokemon.html
+            setTimeout(function () {
+                window.location.href = "explorepokemon.html";
+            }, 3000);
+        });
+
+        function showLoadingEffect() {
+            // Create a loading container
+            var loadingContainer = document.createElement("div");
+            loadingContainer.classList.add("loading-container");
+
+            // Create a ball element
+            var ball = document.createElement("div");
+            ball.classList.add("ball");
+
+            // Append the ball to the loading container
+            loadingContainer.appendChild(ball);
+
+            // Append the loading container to the body
+            document.body.appendChild(loadingContainer);
+        }
+
+        // Simulate a delay of 3 seconds before displaying the content
+        setTimeout(function () {
+            // Remove the loading container
+            document.querySelector('.loading-container').remove();
+
+            // Show the content or additional elements
+            document.getElementById("content").style.display = "block";
+        }, 3000);
+
+        // JavaScript for typing animation
+        function typeText(element, text, speed) {
+            let i = 0;
+            function type() {
+                if (i < text.length) {
+                    document.getElementById(element).innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(type, speed);
+                }
+            }
+            type();
+        }
+
+        // Start typing animation after a delay
+        setTimeout(function () {
+            typeText('typingText', 'Welcome to Explore Pokemon', 100);
+        }, 300); // Delay for 0.3 seconds
+    </script>
+</body>
 </html>
